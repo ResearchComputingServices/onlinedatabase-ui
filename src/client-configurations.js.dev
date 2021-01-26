@@ -11,10 +11,10 @@ class ClientConfig {
 
   // Keycloak stuff
   getRealm() {
-    return 'seed'
+    return 'onlinedatabase'
   }
   getClient() {
-    return 'seed'
+    return 'onlinedatabase'
   }
   getServer() {
     return 'permafrost.carleton.ca'
@@ -23,7 +23,7 @@ class ClientConfig {
     return '7010'
   }
   getSecret() {
-    return '57d67ba2-c11a-40b6-be80-a74d0176b6d7'
+    return 'cda34036-54b6-4169-891b-a080499efd85'
   }
   isHTTPS() {
     return true
