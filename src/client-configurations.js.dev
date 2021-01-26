@@ -6,7 +6,7 @@ class ClientConfig {
     return this.getServerURL() + ':7022'
   }
   getApi() {
-    return this.getServerURL() + ':7022/flask_seed_api'
+    return this.getServerURL() + ':7022/onlinedatabase_api'
   }
 
   // Keycloak stuff

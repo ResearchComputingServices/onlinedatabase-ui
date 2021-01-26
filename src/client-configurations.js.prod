@@ -3,10 +3,10 @@ class ClientConfig {
     return 'https://permafrost.carleton.ca'
   }
   getAuthenticationURL () {
-    return this.getServerURL() + ':7022'
+    return this.getServerURL() + ':7024'
   }
   getApi() {
-    return this.getServerURL() + ':7022/flask_seed_api'
+    return this.getServerURL() + ':7024/onlinedatabase_api'
   }
 
   // Keycloak stuff
