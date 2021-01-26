@@ -232,7 +232,7 @@ function Main({ authenticate }) {
                                 }
                                 variant='h5'
                             >
-                                React Seed
+                                Online Database
                             </Typography>
                             <UserMenu
                                 displayName={displayName}
