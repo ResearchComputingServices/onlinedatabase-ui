@@ -1,12 +1,12 @@
 class ClientConfig {
   getServerURL() {
-    return 'http://localhost'
+    return 'https://rcs-development.carleton.ca'
   }
   getAuthenticationURL () {
-    return this.getServerURL() + ':7022'
+    return this.getServerURL() + ':7024'
   }
   getApi() {
-    return this.getServerURL() + ':7022/onlinedatabase_api'
+    return this.getServerURL() + ':7024/onlinedatabase_api'
   }
 
   // Keycloak stuff
