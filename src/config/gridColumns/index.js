@@ -3,6 +3,7 @@ import users from './usersGridColumns';
 import enumerations from './enumerationsColumns';
 import userFieldTypes from './userFieldTypesColumns';
 import roles from './rolesGridColumns';
+import articles from './articlesGridColumns';
 
 export {
     userFields,
@@ -10,4 +11,5 @@ export {
     enumerations,
     userFieldTypes,
     roles,
+    articles,
 };

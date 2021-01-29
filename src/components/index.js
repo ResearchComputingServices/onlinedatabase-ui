@@ -28,3 +28,5 @@ export { default as UserFieldType } from './UserFieldType';
 export { default as UserFieldTypes } from './UserFieldTypes';
 export { default as Users } from './Users';
 export { default as FormContainer } from './FormContainer';
+export { default as Article } from './Article';
+export { default as Articles } from './Articles';

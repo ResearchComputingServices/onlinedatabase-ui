@@ -18,6 +18,12 @@ export default [
         roles: '*',
     },
     {
+        path: '/articles',
+        title: 'Articles',
+        Icon: DashboardIcon,
+        roles: '*',
+    },
+    {
         name: 'settings',
         title: 'Settings',
         Icon: SettingsIcon,

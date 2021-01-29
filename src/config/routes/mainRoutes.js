@@ -9,6 +9,8 @@ import UserFieldTypes from '../../components/UserFieldTypes';
 import UserFieldType from '../../components/UserFieldType';
 import Roles from '../../components/Roles';
 import Dashboard from '../../components/Dashboard';
+import Article from '../../components/Article';
+import Articles from '../../components/Articles';
 
 export default [
     {
@@ -84,6 +86,16 @@ export default [
     {
         path: '/roles/',
         component: Roles,
+        roles: '*',
+    },
+    {
+        path: '/articles',
+        component: Articles,
+        roles: '*',
+    },
+    {
+        path: '/articles/article',
+        component: Article,
         roles: '*',
     },
     {

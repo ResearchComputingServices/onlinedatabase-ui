@@ -11,6 +11,7 @@ import drawerAssembler from './DrawerAssemblerService';
 import authorization from './AuthorizationsService';
 import rolesChecker from './RolesCheckerService';
 import enumeration from './EnumerationService';
+import article from './ArticleService';
 
 export {
     history,
@@ -26,4 +27,5 @@ export {
     authorization,
     rolesChecker,
     enumeration,
+    article,
 };
