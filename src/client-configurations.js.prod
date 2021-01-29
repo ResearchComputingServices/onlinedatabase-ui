@@ -1,6 +1,6 @@
 class ClientConfig {
   getServerURL() {
-    return 'https://permafrost.carleton.ca'
+    return 'https://rcs-development.carleton.ca'
   }
   getAuthenticationURL () {
     return this.getServerURL() + ':7024'
@@ -17,7 +17,7 @@ class ClientConfig {
     return 'onlinedatabase'
   }
   getServer() {
-    return 'permafrost.carleton.ca'
+    return 'rcs-development.carleton.ca'
   }
   getPort() {
     return '7010'
