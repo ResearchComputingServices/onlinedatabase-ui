@@ -1,7 +1,22 @@
 export default [
     {
-        field: 'title',
-        title: 'Title',
+        field: 'name',
+        title: 'Name',
+        required: true,
+    },
+    {
+        field: 'author',
+        title: 'Author',
+        required: true,
+    },
+    {
+        field: 'year',
+        title: 'Year',
+        required: true,
+    },
+    {
+        field: 'publisher',
+        title: 'Publisher',
         required: true,
     },
     {
