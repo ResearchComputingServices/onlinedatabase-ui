@@ -18,6 +18,7 @@ function Article({ match }) {
         delete: '*',
         export: '*',
     };
+
     const entity = 'article';
     const id = _.get(match, 'params.id');
     const animationTimeout = 300;
@@ -64,6 +65,7 @@ function Article({ match }) {
     });
 
     const onValueDelete = oldData => new Promise((resolve, reject) => {
+        console.log('delete')
         setTimeout(() => {
             if (!_.isEmpty(oldData)) {
                 const data = [...values];

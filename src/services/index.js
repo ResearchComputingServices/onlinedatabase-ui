@@ -12,6 +12,7 @@ import authorization from './AuthorizationsService';
 import rolesChecker from './RolesCheckerService';
 import enumeration from './EnumerationService';
 import article from './ArticleService';
+import searchArticle from './SearchArticleService';
 
 export {
     history,
@@ -28,4 +29,5 @@ export {
     rolesChecker,
     enumeration,
     article,
+    searchArticle,
 };

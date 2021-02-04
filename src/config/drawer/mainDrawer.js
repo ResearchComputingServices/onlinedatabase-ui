@@ -2,7 +2,10 @@ import {
     Person as PersonIcon,
     Settings as SettingsIcon,
     Dashboard as DashboardIcon,
+    Search as SearchIcon,
+    MenuBook as MenuBookIcon
 } from '@material-ui/icons';
+
 
 export default [
     {
@@ -20,7 +23,13 @@ export default [
     {
         path: '/articles',
         title: 'Articles',
-        Icon: DashboardIcon,
+        Icon: MenuBookIcon,
+        roles: '*',
+    },
+    {
+        path: '/articles/search',
+        title: 'Search Articles',
+        Icon: SearchIcon,
         roles: '*',
     },
     {

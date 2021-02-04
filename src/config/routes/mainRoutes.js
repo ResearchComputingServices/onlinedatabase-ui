@@ -11,6 +11,7 @@ import Roles from '../../components/Roles';
 import Dashboard from '../../components/Dashboard';
 import Article from '../../components/Article';
 import Articles from '../../components/Articles';
+import ArticleSearch from '../../components/ArticleSearch';
 
 export default [
     {
@@ -96,6 +97,16 @@ export default [
     {
         path: '/articles/article',
         component: Article,
+        roles: '*',
+    },
+    {
+        path: '/articles/article/:id',
+        component: Article,
+        roles: '*',
+    },
+    {
+        path: '/articles/search',
+        component: ArticleSearch,
         roles: '*',
     },
     {

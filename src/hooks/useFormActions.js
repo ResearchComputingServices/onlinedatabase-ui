@@ -73,11 +73,24 @@ export default function(entity, locale) {
         }
     };
 
+    const search = async data => {
+        if (_.isEmpty(data)) return;
+        dataRef.current = data;
+        try {
+            const result = data;
+            ToastsStore.success(`Successfully updated ${locale}`);
+            return result;
+        } catch (err) {
+            ToastsStore.error(`Failed to update ${locale}`);
+        }
+    };
+
     return {
         create,
         update,
         remove,
         download,
         cancel,
+        search,
     };
 }
