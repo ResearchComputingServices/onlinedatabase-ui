@@ -65,7 +65,6 @@ function Article({ match }) {
     });
 
     const onValueDelete = oldData => new Promise((resolve, reject) => {
-        console.log('delete')
         setTimeout(() => {
             if (!_.isEmpty(oldData)) {
                 const data = [...values];
