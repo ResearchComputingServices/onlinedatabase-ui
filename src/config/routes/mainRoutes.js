@@ -15,7 +15,6 @@ import ArticleSearch from '../../components/ArticleSearch';
 import TempArticle from '../../components/TempArticle';
 import TempArticles from '../../components/TempArticles';
 
-
 export default [
     {
         path: '/',

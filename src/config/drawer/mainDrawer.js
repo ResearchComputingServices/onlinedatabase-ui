@@ -45,7 +45,7 @@ export default [
             {
                 path: '/temp-articles/temp-article',
                 title: 'Contribute',
-                roles: ['Administrator', 'Contributer'],
+                roles: ['Administrator', 'Contributor'],
             },
         ],
     },
