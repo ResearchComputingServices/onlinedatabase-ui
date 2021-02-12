@@ -11,17 +11,17 @@ import {
     useFormButtons,
 } from '../../hooks';
 
-function Article({ match }) {
+function TempArticle({ match }) {
     const rights = {
-        create: ['Administrator', 'Researcher'],
-        update: ['Administrator', 'Researcher'],
-        delete: ['Administrator'],
-        export: '*',
-        approve: [],
-        decline: [],
+        create: '*',
+        update: '*',
+        delete: [],
+        export: [],
+        approve: ['Administrator', 'Researcher'],
+        decline: ['Administrator', 'Researcher'],
     };
 
-    const entity = 'article';
+    const entity = 'tempArticle';
     const id = _.get(match, 'params.id');
     const animationTimeout = 300;
 
@@ -80,7 +80,6 @@ function Article({ match }) {
     });
 
     const actions = useFormActions(entity);
-
     const buttons = useFormButtons(id, {
         ...actions,
         create: async data => {
@@ -94,6 +93,21 @@ function Article({ match }) {
         update: async data => {
             data.values = values;
             const result = await actions.update(data);
+            if (!_.isNil(result)) {
+                setData(result);
+            }
+        },
+        approve: async data => {
+            data.values = values;
+            const result = await actions.approve(data);
+            if (!_.isNil(result)) {
+                setData(result);
+                actions.cancel();
+            }
+        },
+        decline: async data => {
+            data.values = values;
+            const result = await actions.decline(data);
             if (!_.isNil(result)) {
                 setData(result);
             }
@@ -128,6 +142,6 @@ function Article({ match }) {
     );
 }
 
-Article.propTypes = { match: PropTypes.object.isRequired };
+TempArticle.propTypes = { match: PropTypes.object.isRequired };
 
-export default Article;
+export default TempArticle;

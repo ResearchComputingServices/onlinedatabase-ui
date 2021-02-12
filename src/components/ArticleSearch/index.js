@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
 function ArticleSearch() {
     const classes = useStyles();
     const service = useService('searchArticle');
-    const [searchTerm, setSearchTerm] = React.useState({ name: '', author: '' });
+    const [searchTerm, setSearchTerm] = React.useState({});
     const [searchResults, setSearchResults] = React.useState([]);
     const [selectedRow, setSelectedRow] = React.useState(null);
 
@@ -67,7 +67,7 @@ function ArticleSearch() {
                             id='standard-multiline-flexible'
                             label='Author'
                             multiline
-                            name='author'
+                            name='authorOfBook'
                             onChange={handleChange}
                             rowsMax={4}
                             value={author}
@@ -106,14 +106,14 @@ function ArticleSearch() {
                 <MaterialTable
                     columns={[
                         { title: 'Name', field: 'name' },
-                        { title: 'Author', field: 'author' },
+                        { title: 'Author', field: 'authorOfBook' },
                         { title: 'Language', field: 'language' },
                         { title: 'Year', field: 'year' },
                     ]}
-                    data={searchResults.map(({ name, author, language, year }) => (
+                    data={searchResults.map(({ name, authorOfBook, language, year }) => (
                         {
                             name,
-                            author,
+                            authorOfBook,
                             language,
                             year,
                         }

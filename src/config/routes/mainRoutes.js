@@ -12,6 +12,9 @@ import Dashboard from '../../components/Dashboard';
 import Article from '../../components/Article';
 import Articles from '../../components/Articles';
 import ArticleSearch from '../../components/ArticleSearch';
+import TempArticle from '../../components/TempArticle';
+import TempArticles from '../../components/TempArticles';
+
 
 export default [
     {
@@ -107,6 +110,21 @@ export default [
     {
         path: '/articles/search',
         component: ArticleSearch,
+        roles: '*',
+    },
+    {
+        path: '/temp-articles',
+        component: TempArticles,
+        roles: '*',
+    },
+    {
+        path: '/temp-articles/temp-article',
+        component: TempArticle,
+        roles: '*',
+    },
+    {
+        path: '/temp-articles/temp-article/:id',
+        component: TempArticle,
         roles: '*',
     },
     {

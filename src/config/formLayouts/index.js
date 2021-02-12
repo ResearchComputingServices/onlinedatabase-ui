@@ -4,6 +4,7 @@ import enumeration from './enumerationFormLayout';
 import userFieldType from './userFieldTypeLayout';
 import role from './roleFormLayout';
 import article from './articleFormLayout';
+import tempArticle from './tempArticleFormLayout';
 
 export {
     userField,
@@ -12,4 +13,5 @@ export {
     userFieldType,
     role,
     article,
+    tempArticle,
 };

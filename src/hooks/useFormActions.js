@@ -73,11 +73,23 @@ export default function(entity, locale) {
         }
     };
 
-    const search = async data => {
+    const approve = async data => {
         if (_.isEmpty(data)) return;
         dataRef.current = data;
         try {
-            const result = data;
+            const result = await service.approve(data);
+            ToastsStore.success(`Successfully updated ${locale}`);
+            return result;
+        } catch (err) {
+            ToastsStore.error(`Failed to update ${locale}`);
+        }
+    };
+
+    const decline = async data => {
+        if (_.isEmpty(data)) return;
+        dataRef.current = data;
+        try {
+            const result = await service.decline(data);
             ToastsStore.success(`Successfully updated ${locale}`);
             return result;
         } catch (err) {
@@ -91,6 +103,7 @@ export default function(entity, locale) {
         remove,
         download,
         cancel,
-        search,
+        approve,
+        decline,
     };
 }

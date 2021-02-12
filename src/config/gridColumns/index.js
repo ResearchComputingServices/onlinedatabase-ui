@@ -4,6 +4,7 @@ import enumerations from './enumerationsColumns';
 import userFieldTypes from './userFieldTypesColumns';
 import roles from './rolesGridColumns';
 import articles from './articlesGridColumns';
+import tempArticles from './tempArticlesGridColumns';
 
 export {
     userFields,
@@ -12,4 +13,5 @@ export {
     userFieldTypes,
     roles,
     articles,
+    tempArticles,
 };

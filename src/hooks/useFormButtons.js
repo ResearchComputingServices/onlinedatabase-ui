@@ -27,7 +27,7 @@ export default function useFormButtons(
     id, handlers, authorizations = {}, disableMutation = false, disableDelete = false, skipAuthorization = false,
 ) {
     const rolesCheckerService = useRolesCheckerService();
-    const { create, update, remove, download, cancel } = handlers;
+    const { create, update, remove, download, cancel, approve, decline } = handlers;
     return [
         _.isNil(id) ? getButton(rolesCheckerService, 'Create', create, {
             disabled: disableMutation,
@@ -45,6 +45,16 @@ export default function useFormButtons(
             skipAuthorization,
         }),
         _.isNil(id) ? null : getButton(rolesCheckerService, 'Export', download, { authorization: authorizations.export }),
+        _.isNil(id) ? null : getButton(rolesCheckerService, 'Approve', approve, {
+            disabled: disableMutation,
+            authorization: authorizations.approve,
+            skipAuthorization,
+        }),
+        _.isNil(id) ? null : getButton(rolesCheckerService, 'Decline', decline, {
+            disabled: disableMutation,
+            authorization: authorizations.decline,
+            skipAuthorization,
+        }),
         getButton(rolesCheckerService, 'Cancel', cancel, { type: 'utility' }),
     ];
 }

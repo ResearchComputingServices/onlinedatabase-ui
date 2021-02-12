@@ -26,6 +26,8 @@ function User({ match }) {
         update: '*',
         delete: '*',
         export: '*',
+        approve: [],
+        decline: [],
     };
     const entity = 'user';
     const id = _.get(match, 'params.id');
