@@ -6,7 +6,7 @@ export default [
     },
     {
         field: 'name',
-        title: 'Name',
+        title: 'Title',
         required: true,
     },
     {

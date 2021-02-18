@@ -15,6 +15,7 @@ function TempArticle({ match }) {
     const rights = {
         create: '*',
         update: '*',
+        import: '*',
         delete: [],
         export: [],
         approve: ['Administrator', 'Researcher'],

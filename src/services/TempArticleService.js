@@ -14,6 +14,10 @@ class TempArticleService extends RestService {
 
     count = this._count;
 
+    export = this._export;
+
+    import = this._import;
+
     approve = (data, options = {}) => axios
         .post(`${this.prefix}/approve`, this._processRequest(data, options))
         .then(data => this._processResponse(data, options));

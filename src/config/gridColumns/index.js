@@ -5,6 +5,7 @@ import userFieldTypes from './userFieldTypesColumns';
 import roles from './rolesGridColumns';
 import articles from './articlesGridColumns';
 import tempArticles from './tempArticlesGridColumns';
+import searchArticles from './searchArticlesGridColumns';
 
 export {
     userFields,
@@ -14,4 +15,5 @@ export {
     roles,
     articles,
     tempArticles,
+    searchArticles,
 };

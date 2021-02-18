@@ -40,12 +40,12 @@ export default [
             {
                 path: '/temp-articles',
                 title: 'Contribution List',
-                roles: ['Administrator', 'Researcher'],
+                roles: '*',
             },
             {
                 path: '/temp-articles/temp-article',
                 title: 'Contribute',
-                roles: ['Administrator', 'Contributor'],
+                roles: '*',
             },
         ],
     },

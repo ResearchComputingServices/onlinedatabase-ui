@@ -12,6 +12,10 @@ class ArticleService extends RestService {
     remove = this._remove;
 
     count = this._count;
+
+    export = this._export;
+
+    import = this._import;
 }
 
 const articleService = new ArticleService();

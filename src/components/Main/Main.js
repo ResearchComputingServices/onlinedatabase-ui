@@ -242,11 +242,11 @@ function Main({ authenticate }) {
                                         Icon: <ExitToAppIcon />,
                                         handler: logout,
                                     },
-                                    {
-                                        title: `${!isDark ? 'Dark' : 'Light'} Theme`,
-                                        Icon: !isDark ? <LightModeIcon /> : <DarkModeIcon />,
-                                        handler: switchThemeMode,
-                                    },
+                                    // {
+                                    //     title: `${!isDark ? 'Dark' : 'Light'} Theme`,
+                                    //     Icon: !isDark ? <LightModeIcon /> : <DarkModeIcon />,
+                                    //     handler: switchThemeMode,
+                                    // },
                                 ]}
                             />
                         </Box>
