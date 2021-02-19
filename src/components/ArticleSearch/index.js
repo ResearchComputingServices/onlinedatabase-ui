@@ -1,5 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
+import axios from 'axios';
+import FileSaver from 'file-saver';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import MaterialTable from 'material-table';
@@ -39,11 +41,19 @@ function ArticleSearch({
     const columns = useGridColumns('searchArticle');
     const actions = useGridActions('searchArticle');
 
+    const handleCitation = data => {
+        axios
+            .get(`https://rcs-development.carleton.ca:7024/onlinedatabase_api/articles/citation?id=${data.id}`)
+            .then(res => {
+                const blob = new Blob([res.data], { type: 'text/plain;charset=utf-8' });
+                FileSaver.saveAs(blob, 'Citation.txt');
+            }).catch( err => ToastsStore.error('Failed to export Citation'));
+    };
+
     const fetchData = async query => {
         try {
             const data = await service.get(query);
             setSearchResults(data);
-            console.log(data)
         } catch (err) {
             ToastsStore.error('Failed to retrieve search result');
             return {
@@ -64,7 +74,7 @@ function ArticleSearch({
     const handleSearch = () => {
         fetchData(searchTerm);
     };
-console.log(searchTerm)
+
     const { name, author, language, year } = searchTerm;
     return (
         <>
@@ -126,6 +136,13 @@ console.log(searchTerm)
             && (
                 <Box>
                     <MaterialTable
+                        actions={[
+                            {
+                                icon: 'download',
+                                tooltip: 'Export Citation',
+                                onClick: (event, rowData) => handleCitation(rowData),
+                            },
+                        ]}
                         className={className}
                         columns={columns}
                         data={searchResults}
@@ -134,6 +151,7 @@ console.log(searchTerm)
                             onRowUpdate,
                             onRowDelete,
                         }}
+                        localization={{ header: { actions: 'Citation' } }}
                         onRowClick={_.isFunction(onRowClick) ? onRowClick : undefined}
                         options={{
                             search: false,
