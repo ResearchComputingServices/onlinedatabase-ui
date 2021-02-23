@@ -1,6 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
-import axios from 'axios';
+// import axios from 'axios';
 import FileSaver from 'file-saver';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
@@ -10,7 +10,6 @@ import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
 import { ToastsStore } from 'react-toasts';
 import Box from '@material-ui/core/Box';
-import DownloadIcon from '@material-ui/icons/GetApp';
 import { useService, useGridColumns, useGridActions } from '../../hooks';
 
 const useStyles = makeStyles(theme => ({
@@ -160,6 +159,10 @@ function ArticleSearch({
                         onRowClick={_.isFunction(onRowClick) ? onRowClick : undefined}
                         onSelectionChange={data => setSelection(data)}
                         options={{
+                            exportButton: true,
+                            exportCsv: () => {
+                                actions.onExport(null, null, searchTerm);
+                            },
                             selection: true,
                             search: false,
                             filtering: false,
@@ -172,16 +175,6 @@ function ArticleSearch({
                         tableRef={tableRef}
                         title={title}
                     />
-                    {/* <Box mr={1}>
-                        <Button
-                            color='primary'
-                            onClick={() => actions.onExport(null, null, searchTerm)}
-                            startIcon={<DownloadIcon />}
-                            variant='contained'
-                        >
-                            Export
-                        </Button>
-                    </Box> */}
                 </Box>
 
             )}
