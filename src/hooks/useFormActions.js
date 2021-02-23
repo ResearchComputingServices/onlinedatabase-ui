@@ -62,7 +62,7 @@ export default function(entity, locale) {
         try {
             const { id } = data;
             type = !_.isNil(type) ? type : 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
-            extension = 'txt';
+            extension = !_.isNil(extension) ? extension : 'xlsx';
             const blob = new Blob(
                 [await service.export(id)],
                 { type },

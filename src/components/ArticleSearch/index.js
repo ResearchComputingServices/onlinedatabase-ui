@@ -38,18 +38,23 @@ function ArticleSearch({
     const service = useService('searchArticle');
     const [searchTerm, setSearchTerm] = React.useState({});
     const [searchResults, setSearchResults] = React.useState([]);
+    const [selection, setSelection] = React.useState([]);
     const columns = useGridColumns('searchArticle');
     const actions = useGridActions('searchArticle');
 
-    const handleCitation = data => {
-        axios
-            .get(`https://rcs-development.carleton.ca:7024/onlinedatabase_api/articles/citation?id=${data.id}`)
-            .then(res => {
-                const blob = new Blob([res.data], { type: 'text/plain;charset=utf-8' });
-                FileSaver.saveAs(blob, 'Citation.txt');
-            }).catch( err => ToastsStore.error('Failed to export Citation'));
+    const handleCitation = () => {
+        try {
+            const citations = selection.map(item => {
+                const result = `${item.authorOfBook.split(' ')[1]}, ${item.authorOfBook.split(' ')[0][0]}. ${item.year}. ${item.name}. ${item.placeOfPublication}: ${item.publisher}.\r\n`;
+                return result;
+            });
+            const blob = new Blob(citations, { type: 'text/plain;charset=utf-8' });
+            FileSaver.saveAs(blob, 'Citation.txt');
+            ToastsStore.success('Successfully exported Citations');
+        } catch {
+            ToastsStore.error('Failed to export');
+        }
     };
-
     const fetchData = async query => {
         try {
             const data = await service.get(query);
@@ -140,7 +145,7 @@ function ArticleSearch({
                             {
                                 icon: 'download',
                                 tooltip: 'Export Citation',
-                                onClick: (event, rowData) => handleCitation(rowData),
+                                onClick: () => handleCitation(),
                             },
                         ]}
                         className={className}
@@ -151,9 +156,11 @@ function ArticleSearch({
                             onRowUpdate,
                             onRowDelete,
                         }}
-                        localization={{ header: { actions: 'Citation' } }}
+                        localization={{ header: { selections: 'Citation' } }}
                         onRowClick={_.isFunction(onRowClick) ? onRowClick : undefined}
+                        onSelectionChange={data => setSelection(data)}
                         options={{
+                            selection: true,
                             search: false,
                             filtering: false,
                             ..._.omit(options, ['format', 'exclude', 'query']),
