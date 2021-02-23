@@ -14,6 +14,7 @@ import Articles from '../../components/Articles';
 import ArticleSearch from '../../components/ArticleSearch';
 import TempArticle from '../../components/TempArticle';
 import TempArticles from '../../components/TempArticles';
+import MulipleTempArticles from '../../components/MulipleTempArticles';
 
 export default [
     {
@@ -124,6 +125,11 @@ export default [
     {
         path: '/temp-articles/temp-article/:id',
         component: TempArticle,
+        roles: '*',
+    },
+    {
+        path: '/temp-articles/multiple-temp-article',
+        component: MulipleTempArticles,
         roles: '*',
     },
     {

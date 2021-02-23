@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
 import { AdministratorGrid } from '..';
 
 function ArticlesGrid({

@@ -40,11 +40,16 @@ export default [
             {
                 path: '/temp-articles',
                 title: 'Contribution List',
-                roles: '*',
+                roles: ['Administrator', 'Researcher'],
             },
             {
                 path: '/temp-articles/temp-article',
-                title: 'Contribute',
+                title: 'Add One Item',
+                roles: '*',
+            },
+            {
+                path: '/temp-articles/multiple-temp-article',
+                title: 'Add Multiple Items',
                 roles: '*',
             },
         ],

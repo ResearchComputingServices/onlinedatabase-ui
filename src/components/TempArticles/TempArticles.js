@@ -5,9 +5,9 @@ import { useGridActions, useGridButtons } from '../../hooks';
 
 export default function TempArticles() {
     const rights = {
-        create: '*',
+        create: [],
         export: [],
-        import: '*',
+        import: [],
         read: ['Administrator', 'Researcher'],
     };
     const actions = useGridActions('tempArticles');

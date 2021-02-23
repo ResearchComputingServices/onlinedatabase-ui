@@ -1,5 +1,3 @@
-import axios from 'axios';
-import _ from 'lodash';
 import RestService from './RestService';
 
 class SearchArticleService extends RestService {
