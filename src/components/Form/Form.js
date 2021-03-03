@@ -149,7 +149,6 @@ function Form({ controls, data, layout, sections, buttons, readonly }) {
     const elements = [];
     const index = createForm(elements, 0, layout, data, controls, readonly);
     const getHandler = handler => (_.isFunction(handler) ? handler : _.noop);
-
     // If there are any form errors we immediately notify the user indicating an error via toast message.
     useEffect(() => {
         if (!_.isEmpty(controls.errors)) {

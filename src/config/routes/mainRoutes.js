@@ -19,83 +19,83 @@ import MulipleTempArticles from '../../components/MulipleTempArticles';
 export default [
     {
         path: '/',
-        component: Dashboard,
+        component: ArticleSearch,
         roles: '*',
     },
     {
         path: '/dashboard',
         component: Dashboard,
-        roles: '*',
+        roles: ['Administrator'],
     },
     {
         path: '/users',
         component: Users,
-        roles: '*',
+        roles: ['Administrator'],
     },
     {
         path: '/users/user',
         component: User,
-        roles: '*',
+        roles: ['Administrator'],
     },
     {
         path: '/users/user/:id',
         component: User,
-        roles: '*',
+        roles: ['Administrator'],
     },
     {
         path: '/user-fields/',
         component: UserFields,
-        roles: '*',
+        roles: ['Administrator'],
     },
     {
         path: '/user-fields/user-field',
         component: UserField,
-        roles: '*',
+        roles: ['Administrator'],
     },
     {
         path: '/user-fields/user-field/:id',
         component: UserField,
-        roles: '*',
+        roles: ['Administrator'],
     },
-    {
-        path: '/enumerations/',
-        component: Enumerations,
-        roles: '*',
-    },
-    {
-        path: '/enumerations/enumeration',
-        component: Enumeration,
-        roles: '*',
-    },
-    {
-        path: '/enumerations/enumeration/:id',
-        component: Enumeration,
-        roles: '*',
-    },
-    {
-        path: '/user-field-types/',
-        component: UserFieldTypes,
-        roles: '*',
-    },
-    {
-        path: '/user-field-types/user-field-type',
-        component: UserFieldType,
-        roles: '*',
-    },
-    {
-        path: '/user-field-types/user-field-type/:id',
-        component: UserFieldType,
-        roles: '*',
-    },
+    // {
+    //     path: '/enumerations/',
+    //     component: Enumerations,
+    //     roles: '*',
+    // },
+    // {
+    //     path: '/enumerations/enumeration',
+    //     component: Enumeration,
+    //     roles: '*',
+    // },
+    // {
+    //     path: '/enumerations/enumeration/:id',
+    //     component: Enumeration,
+    //     roles: '*',
+    // },
+    // {
+    //     path: '/user-field-types/',
+    //     component: UserFieldTypes,
+    //     roles: '*',
+    // },
+    // {
+    //     path: '/user-field-types/user-field-type',
+    //     component: UserFieldType,
+    //     roles: '*',
+    // },
+    // {
+    //     path: '/user-field-types/user-field-type/:id',
+    //     component: UserFieldType,
+    //     roles: '*',
+    // },
     {
         path: '/roles/',
         component: Roles,
-        roles: '*',
+        roles: ['Administrator'],
     },
     {
         path: '/articles',
         component: Articles,
-        roles: '*',
+        roles: ['Administrator', 'Researcher'],
     },
     {
         path: '/articles/article',

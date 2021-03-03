@@ -10,6 +10,7 @@ import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
 import { ToastsStore } from 'react-toasts';
 import Box from '@material-ui/core/Box';
+import DownloadIcon from '@material-ui/icons/GetApp';
 import { useService, useGridColumns, useGridActions } from '../../hooks';
 
 const useStyles = makeStyles(theme => ({
@@ -101,7 +102,7 @@ function ArticleSearch({
                             id='standard-multiline-flexible'
                             label='Author'
                             multiline
-                            name='authorOfBook'
+                            name='author_of_book'
                             onChange={handleChange}
                             rowsMax={4}
                             value={author}
@@ -133,6 +134,31 @@ function ArticleSearch({
                         </Button>
                     </div>
                 </form>
+                <Box
+                    display='flex'
+                    justifyContent='center'
+                    pt={2}
+                >
+                    <Box mr={1}>
+                        <Button
+                            color='primary'
+                            onClick={() => undefined}
+                            variant='contained'
+                        >
+                            Advance Search
+                        </Button>
+                    </Box>
+                    <Box mr={1}>
+                        <Button
+                            color='primary'
+                            onClick={() => actions.onExport(null, null, searchTerm)}
+                            startIcon={<DownloadIcon />}
+                            variant='contained'
+                        >
+                            Export the search result
+                        </Button>
+                    </Box>
+                </Box>
             </Container>
             <br />
 
@@ -159,10 +185,10 @@ function ArticleSearch({
                         onRowClick={_.isFunction(onRowClick) ? onRowClick : undefined}
                         onSelectionChange={data => setSelection(data)}
                         options={{
-                            exportButton: true,
-                            exportCsv: () => {
-                                actions.onExport(null, null, searchTerm);
-                            },
+                            // exportButton: true,
+                            // exportCsv: () => {
+                            //     actions.onExport(null, null, searchTerm);
+                            // },
                             selection: true,
                             search: false,
                             filtering: false,

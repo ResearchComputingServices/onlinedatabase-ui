@@ -9,7 +9,6 @@ export default class RestService {
 
     _transform = (data, transformers = []) => {
         const transform = _.flow(transformers);
-        console.log(transform(data))
         return transform(data);
     }
 
@@ -20,7 +19,6 @@ export default class RestService {
         if (options.single) {
             [data] = data;
         }
-        console.log('gggg', options)
         return this._transform(data, options.responseTransformers);
     }
 
