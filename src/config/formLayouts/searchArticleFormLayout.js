@@ -1,6 +1,6 @@
 export default [
     {
-        field: 'sourceType',
+        field: 'source_type',
         title: 'Type',
         required: false,
     },
@@ -25,47 +25,47 @@ export default [
         required: false,
     },
     {
-        field: 'titleOfChapterArticle',
+        field: 'title_of_chapter_article',
         title: 'Title of Chapter/Article',
         required: false,
     },
     {
-        field: 'pageRange',
+        field: 'page_range',
         title: 'Page Range',
         required: false,
     },
     {
-        field: 'authorOfBook',
+        field: 'author_of_book',
         title: 'Author of Book',
         required: false,
     },
     {
-        field: 'authorOfChapterArticle',
+        field: 'author_of_chapter_article',
         title: 'Author of Chapter/Article',
         required: false,
     },
     {
-        field: 'placeOfPublication',
+        field: 'place_of_publication',
         title: 'Place of Publication',
         required: false,
     },
     {
-        field: 'varietyStudied',
+        field: 'variety_studied',
         title: 'Variety Studied',
         required: false,
     },
     {
-        field: 'languageFeatureStudied',
+        field: 'language_feature_studied',
         title: 'Language Feature Studied',
         required: false,
     },
     {
-        field: 'regionField',
+        field: 'region_field',
         title: 'Region Field',
         required: false,
     },
     {
-        field: 'otherKeywords',
+        field: 'other_keywords',
         title: 'Other Keywords',
         required: false,
     },

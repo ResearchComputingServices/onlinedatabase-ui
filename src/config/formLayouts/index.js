@@ -5,6 +5,7 @@ import userFieldType from './userFieldTypeLayout';
 import role from './roleFormLayout';
 import article from './articleFormLayout';
 import tempArticle from './tempArticleFormLayout';
+import searchArticle from './searchArticleFormLayout';
 
 export {
     userField,
@@ -14,4 +15,5 @@ export {
     role,
     article,
     tempArticle,
+    searchArticle,
 };
